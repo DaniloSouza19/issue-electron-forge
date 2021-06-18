@@ -1,6 +1,15 @@
+import { IBonusRepositories } from "../repositories/IBonusRepositories";
+
 class ShowService {
-  public async execute(): Promise<void> {
-    console.log('It works! - service was call')
+  private bonusRepositories: IBonusRepositories;
+
+  constructor(bonusRepositories: IBonusRepositories) {
+    this.bonusRepositories = bonusRepositories;
+  }
+
+
+  public async execute(): Promise<string> {
+    return 'It works! - service was call';
   }
 }
 

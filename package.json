@@ -13,7 +13,8 @@
   },
   "keywords": [],
   "author": {
-    "name": "Danilo Souza"
+    "name": "Danilo Souza",
+    "email": "danilo_souza19@outlook.com"
   },
   "license": "MIT",
   "config": {
@@ -90,6 +91,7 @@
   },
   "dependencies": {
     "dotenv": "^10.0.0",
+    "electron-squirrel-startup": "^1.0.0",
     "knex": "^0.95.6",
     "oracledb": "^5.2.0",
     "react": "^17.0.2",

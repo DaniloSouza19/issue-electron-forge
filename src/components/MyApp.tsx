@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { IApiWindow } from '../types/IApiWindow';
 
@@ -6,22 +6,28 @@ declare const { dgsApi }: IApiWindow;
 
 
 const MyApp: React.FC = () => {
+  const [text, setText] = useState<string>();
 
-  async function handleClick() {
+  const handleClick = useCallback(async() => {
     try {
+      const textFromApi = await dgsApi.showService();
 
-      await dgsApi.getBonusById(123);
-
+      setText(textFromApi)
     } catch (error) {
       console.log(error)
     }
-  }
+  }, [setText])
 
   return (
     <div>
-      <button onClick={() => handleClick}>
+      <button onClick={() => handleClick()}>
         CLICK ME
       </button>
+      {text && (
+        <div>
+          <strong>{text}</strong>
+        </div>
+      )}
     </div>
   );
 }

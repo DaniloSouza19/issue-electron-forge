@@ -22,7 +22,7 @@ const createWindow = (): void => {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
     backgroundColor: '#eee',
-    title: `Fechamento | Abertura de Bonus | Dev Danilo Souza | Versão ${app.getVersion()}`,
+    title: `Dev Danilo Souza | Versão ${app.getVersion()}`,
     icon: path.join(__dirname, 'assets', 'logo.ico')
   });
 
